@@ -32,7 +32,7 @@ return(
          {errors.email && <p style={{'background':'pink', 'padding':'10px'}}>email is required.</p>}
  email <input style={{'background-color': '#eee','width': '92%','border': 'none', 'height': '30px','borderRadius':'10px', 'alignItems':'center','padding':'10px'}}  {...register("email", { required: true })} placeholder="email@exemple.com" />  
          {errors.Password && <p style={{'background':'pink', 'padding':'10px'}}>password is required.</p>}
-  Password <input style={ {'background-color': '#eee','border': 'none', 'borderRadius':'10px', 'width':'92%',   'height': '30px','padding':'10px' }}  {...register("Password", { required: true })} placeholder="password"  type="password"           type="password"/>
+  Password <input style={ {'background-color': '#eee','border': 'none', 'borderRadius':'10px', 'width':'92%',   'height': '30px','padding':'10px' }}  {...register("Password", { required: true })} placeholder="password"  type="password"/>
             <button style={{'backgroundColor' : '#ed0c39','border': "none", 'padding': '17px','color': "white",'width': "100%  ",'textAlign': "center",'textDecoration': "none",'fontSize': "18px",'borderRadius':'10px', 'alignItems':'center', 'marginTop':'25px'}}>
               <b>Login</b> 
             </button>   
