@@ -10,12 +10,12 @@ const initialState = {
 }
 export const ContextProvider = props => {
     const [state, setState] = useSetState(initialState);
-  console.log(state)
+
     const setLoginPending = (isLoginPending) => setState({isLoginPending});
     const setLoginSuccess = (isLoggedIn) => setState({isLoggedIn});
     const setLoginError = (loginError) => setState({loginError});
    
-    
+    /////login ////
     const login = (data) => {
       setLoginPending(true);
       setLoginSuccess(false);
@@ -32,32 +32,25 @@ export const ContextProvider = props => {
         }
       })
     }
+    ///////logout////
     const logout = () => {
       localStorage.removeItem("localstorageApi");
-      
       setLoginPending(false);
       setLoginSuccess(false);
       setLoginError(null);
-
-
     }
-  
-    return (
-      <context.Provider
-        value={{
-          state,
-          login,
-          logout,
-        }}
-      >
+
+  return (
+      <context.Provider value={{ state,login,logout,}}>
         {props.children}
       </context.Provider>
-    );
-  };
+    );};
+
+    
   const fetchLogin = (data, callback) => 
   {  console.log(data.email)
 
-    if (data.email === 'admin' && data.Password === 'admin') {
+    if (data.email === 'Zahra' && data.Password === '123') {
       return callback(
      localStorage.setItem('localstorageApi', JSON.stringify(data))
       )

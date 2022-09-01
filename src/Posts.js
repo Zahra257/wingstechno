@@ -1,5 +1,6 @@
 import React, { useState , useEffect} from 'react'
 import  Axios from 'axios'
+import {Link} from 'react-router-dom'
 
 
 const Posts = () => {
@@ -20,19 +21,16 @@ const Posts = () => {
                 }, [])
 
      return(
-        <>
-        <h1 style={{'marginLeft':'160px'}}>
-          Posts
-        </h1> 
-
-     <div style={{  'display': 'grid', 'grid-template-columns': 'auto auto auto','justifyContent':'center',  'grid-gap': '30px', 'padding': '10px' }}>
-        {Loading && <h1>...loading</h1>}              
-    {List.map(e => (
-<div style={{ 'height': '95%', 'backgroundColor':'white', 'borderRadius': '10px', 'padding':'10px ','width': '300px'}}>
-     <h2>{e.title}</h2><br/>  
-    {e.body}<br/><br/>
-     </div>   ))}         
-       {error && <><h1> empty list </h1></> } 
+<>
+ <h1 style={{'marginLeft':'160px'}}> Posts </h1> 
+    <div style={{  'display': 'grid', 'grid-template-columns': 'auto auto auto','justifyContent':'center',  'grid-gap': '30px', 'padding': '10px' }}>
+            {Loading && <h1>...loading</h1>}              
+           {List.map(e => (
+        <div style={{ 'height': '95%', 'backgroundColor':'white', 'borderRadius': '10px', 'padding':'10px ','width': '300px'}}>
+          <h2>{e.title}</h2> 
+           <span style={{'color':'gray'}}> {e.body}</span><br/>
+        </div> ))}         
+      {error && <><h1> empty list </h1></> } 
     </div>     
 </>
     )
