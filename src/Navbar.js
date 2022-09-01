@@ -6,7 +6,7 @@ import { context } from "./Context/context.js";
 const Navbar = () => {
 
    const { state: ContextState, logout } = useContext(context);
-   const { isLoginPending, isLoggedIn, loginError } = ContextState;
+   const {  isLoggedIn } = ContextState;
    let navigate = useNavigate()
 
    const onLogout = (e) => {
@@ -33,7 +33,7 @@ const Navbar = () => {
       <Link to='/' style={{'textDecoration': "none"}}> <b style={{'color' :'#ed0c39', }}>Home </b> </Link>
          <Link to='/Login'> 
          <button style={ {'backgroundColor' : '#ed0c39','border': "none",'color': "white",'padding': "10px 30px  ",'textAlign': "center",'textDecoration': "none",'fontSize': "18px",'borderRadius':'10px', 'alignItems':'center','lineHeight':'22.5px','marginLeft' :'20px'}}>
-         Login
+              Login
          </button>
       </Link>
     </div>
