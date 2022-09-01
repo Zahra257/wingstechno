@@ -1,28 +1,29 @@
-import React from 'react'
+import React , {useContext}from 'react'
+import Home from './Home'
+import Login from './Login'
+import Posts from './Posts'
+import Navbar from './Navbar'
+import './App.css'
+import { Routes, Route } from "react-router-dom";
+import { context } from './Context/context.js';
 
-import Profil from './profil/Profil'
+const App = () => {
 
-
-class App extends React.Component {
-
+    return(
+        <>
+    <Navbar/>
    
-    render(){
-        // const myVar = {
-        //     fullName: 'Shanté Quinn', 
-        //     profession:' Designer, Fashionista',
-        //     bio:'Shanté is a visual learner social media enthusiast and designer out of Chicago. She likes a mix of styles and wants to be able to look at all of her shopping options in one place',
-        // }
-         return (
-            <div>
-                 <Profil style={{ display:'flex'}}>
-                   <img src='https://image.flaticon.com/icons/png/512/1499/1499575.png' width='200px' height='200px'></img>
+      <Routes>
 
-                    </Profil> 
-                    
-            </div>
+    
+       <Route path='/' element={<Home/>}/> 
+      <Route path='/Login' element={<Login/>}/> 
+      <Route path='/Posts' element={<Posts/>}/>
+   
+      
+       </Routes>
+        </>
     )
-    }
-  
 }
 
 export default App;
